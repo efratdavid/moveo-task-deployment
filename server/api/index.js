@@ -4,7 +4,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const code_block_model = require('./models/code_block'); 
+const code_block_model = require('../models/code_block'); 
 
 const app = express();
 const server = http.createServer(app);
@@ -185,7 +185,7 @@ io.on('connection', (socket) => {
 });
 
   
-const codeBlockRoutes = require('./routes/code_block');
+const codeBlockRoutes = require('../routes/code_block');
 // Injecting the codeBlockRoutes within the application (mounting) on '/coding-application' path.
 app.use('/coding-application', codeBlockRoutes);
   
