@@ -11,7 +11,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 const corsOptions = {
-  origin: 'http://localhost:4200', 
+  origin: "https://moveo-task-client.vercel.app", 
   credentials: true,
 };
 // Enable CORS for all routes
@@ -20,7 +20,7 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Connect to MongoDB 
-mongoose.connect('mongodb://0.0.0.0:27017/moveotask', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://efratdavid8:8QV,mB+6t.weQ2S@cluster0.w2pzpxd.mongodb.net/moveotask?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     generateAndSaveCodeBlocks(); 
