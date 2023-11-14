@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 console.log('Before MongoDB');
 // Connect to MongoDB 
-mongoose.connect('mongodb+srv://efratdavid8:8QV,mB+6t.weQ2S@cluster0.w2pzpxd.mongodb.net/moveotask?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://efratdavid8:k4tGB.DiVq4W3mG@cluster0.w2pzpxd.mongodb.net/moveotask?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     generateAndSaveCodeBlocks(); 
