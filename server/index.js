@@ -19,6 +19,7 @@ app.use(cors(corsOptions));
 // Parse JSON requests
 app.use(bodyParser.json());
 
+console.log('Before MongoDB');
 // Connect to MongoDB 
 mongoose.connect('mongodb+srv://efratdavid8:8QV,mB+6t.weQ2S@cluster0.w2pzpxd.mongodb.net/moveotask?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
