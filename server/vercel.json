@@ -1,7 +1,10 @@
   {
     "version": 2,
     "functions": {
-      "api/index.js": {}
+      "api/index.js": {
+        "runtime": "nodejs14.x",
+        "maxDuration": 30
+      }
     },
     "rewrites": [
       {
