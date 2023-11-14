@@ -19,7 +19,6 @@ app.use(cors(corsOptions));
 // Parse JSON requests
 app.use(bodyParser.json());
 
-console.log('Before MongoDB'); 
 // Connect to MongoDB 
 mongoose.connect('mongodb+srv://efratdavid8:8vOusS3u8zPb5Ijo@mymongodb.h5yfmgz.mongodb.net/mymongodb?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -180,15 +179,8 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        console.log('A user disconnected');
-    });
-
-    socket.on('reconnect', (attemptNumber) => {
-      console.log(`Reconnected: ${socket.id}, Attempt: ${attemptNumber}`);
-    });
-  
-    socket.on('reconnect_attempt', (attemptNumber) => {
-      console.log(`Reconnect attempt: ${socket.id}, Attempt: ${attemptNumber}`);
+        //console.log('A user disconnected');
+        console.log(`User disconnected: ${socket.id}, Reason: ${reason}`);
     });
 });
 
