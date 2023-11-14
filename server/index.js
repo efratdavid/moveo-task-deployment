@@ -9,9 +9,6 @@ const code_block_model = require('./models/code_block');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
-// Set ping timeout and interval on the server
-io.eio.pingTimeout = 120000; // 2 minutes
-io.eio.pingInterval = 5000;  // 5 seconds
 
 const corsOptions = {
   origin: "https://moveo-task-client.vercel.app", 
@@ -145,6 +142,11 @@ async function generateAndSaveCodeBlocks() {
 // Implement Socket.io to handle real-time code changes and updates
 io.on('connection', (socket) => {
     console.log('A user connected');
+
+    // Handle keep-alive messages
+    socket.on('keep-alive', () => {
+      console.log(`Received keep-alive from ${socket.id}`);
+    });
 
     // Check if this is the first user (mentor)
     const isFirstUser = io.engine.clientsCount === 1;
