@@ -29,6 +29,9 @@ mongoose.connect('mongodb://0.0.0.0:27017/moveotask', { useNewUrlParser: true, u
     console.error('Error connecting to MongoDB:', err);
   });
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+})
 
 // Generate and save code blocks
 async function generateAndSaveCodeBlocks() {
