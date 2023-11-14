@@ -178,7 +178,7 @@ io.on('connection', (socket) => {
         }
     });
 
-    socket.on('disconnect', () => {
+    socket.on('disconnect', (reason) => {
         //console.log('A user disconnected');
         console.log(`User disconnected: ${socket.id}, Reason: ${reason}`);
     });
