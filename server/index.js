@@ -29,6 +29,9 @@ mongoose.connect('mongodb+srv://efratdavid8:8QV,mB+6t.weQ2S@cluster0.w2pzpxd.mon
     console.error('Error connecting to MongoDB:', err);
   });
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+})
 
 // Generate and save code blocks
 async function generateAndSaveCodeBlocks() {
