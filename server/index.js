@@ -143,10 +143,10 @@ async function generateAndSaveCodeBlocks() {
 io.on('connection', (socket) => {
     console.log('A user connected');
 
-    // Handle keep-alive messages
+    /* Handle keep-alive messages
     socket.on('keep-alive', () => {
       console.log(`Received keep-alive from ${socket.id}`);
-    });
+    });*/
 
     // Check if this is the first user (mentor)
     const isFirstUser = io.engine.clientsCount === 1;
