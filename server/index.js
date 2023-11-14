@@ -11,7 +11,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 const corsOptions = {
-  origin: "https://marvelous-fudge-08c25f.netlify.app", 
+  origin: "https://moveo-task-client.vercel.app", 
   credentials: true,
 };
 // Enable CORS for all routes
