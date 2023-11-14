@@ -1,18 +1,18 @@
 {
     "version": 2,
     "functions": {
-      "api/index.js": {
+      "./index.js": {
         "maxDuration": 30
       }
     },
     "rewrites": [
       {
         "source": "/socket.io",
-        "destination": "/api/index.js"
+        "destination": "./index.js"
       },
       {
         "source": "/(.*)",
-        "destination": "/api/index.js"
+        "destination": "./index.js"
       }
     ]
   }
