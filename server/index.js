@@ -9,6 +9,9 @@ const code_block_model = require('./models/code_block');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+// Set ping timeout and interval on the server
+io.eio.pingTimeout = 120000; // 2 minutes
+io.eio.pingInterval = 5000;  // 5 seconds
 
 const corsOptions = {
   origin: "https://moveo-task-client.vercel.app", 
@@ -179,8 +182,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', (reason) => {
-        //console.log('A user disconnected');
-        console.log(`User disconnected: ${socket.id}, Reason: ${reason}`);
+        console.log('A user disconnected');
     });
 });
 
