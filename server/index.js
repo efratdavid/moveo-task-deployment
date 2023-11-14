@@ -182,6 +182,14 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('A user disconnected');
     });
+
+    socket.on('reconnect', (attemptNumber) => {
+      console.log(`Reconnected: ${socket.id}, Attempt: ${attemptNumber}`);
+    });
+  
+    socket.on('reconnect_attempt', (attemptNumber) => {
+      console.log(`Reconnect attempt: ${socket.id}, Attempt: ${attemptNumber}`);
+    });
 });
 
   
