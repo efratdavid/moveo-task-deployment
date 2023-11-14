@@ -189,8 +189,10 @@ const codeBlockRoutes = require('./routes/code_block');
 // Injecting the codeBlockRoutes within the application (mounting) on '/coding-application' path.
 app.use('/coding-application', codeBlockRoutes);
   
-server.listen(3000, () => {
-  console.log('Server is running on port 3000');
+// Use port number from the PORT environment variable or 3000 if not specified
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 
